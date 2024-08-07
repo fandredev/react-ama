@@ -59,7 +59,7 @@ export function Room() {
       </form>
 
       <ol className="list-decimal list-outside px-4 space-y-8">
-        <Message text="aosjaokda" amountOfReactions={10} />
+        <Message text="aosjaokda" amountOfReactions={10} answered />
         <Message text="wwwww" amountOfReactions={30} />
       </ol>
     </div>

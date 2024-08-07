@@ -4,9 +4,14 @@ import { useState } from "react";
 interface MessageProps {
   text: string;
   amountOfReactions: number;
+  answered?: boolean;
 }
 
-export function Message({ text, amountOfReactions }: MessageProps) {
+export function Message({
+  text,
+  amountOfReactions,
+  answered = false,
+}: MessageProps) {
   const [hasReacted, setHasReacted] = useState(false);
 
   function handleReactToMessage() {
@@ -14,7 +19,10 @@ export function Message({ text, amountOfReactions }: MessageProps) {
   }
 
   return (
-    <li className="ml-4 text-zinc-100 leading-relaxed">
+    <li
+      data-answered={answered}
+      className="ml-4 text-zinc-100 leading-relaxed data-[answered=true]:opacity-50 data-[answered=true]:pointer-events-none"
+    >
       {text}
       {hasReacted ? (
         <button
