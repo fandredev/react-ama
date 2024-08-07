@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 export function CreateRoom() {
   const navigate = useNavigate();
 
-  function handleCreateRoom(data: FormData) {
+  function handleCreateRoom() {
     navigate("/room/123");
   }
 
