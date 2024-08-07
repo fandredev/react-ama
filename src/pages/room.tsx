@@ -1,10 +1,24 @@
 import { useParams } from "react-router-dom";
 
 import amaLogo from "../assets/ama-logo.svg";
-import { ArrowRight, ArrowUp, Share2 } from "lucide-react";
+import { ArrowRight, Share2 } from "lucide-react";
+import { toast } from "sonner";
+import { Message } from "../components/message";
 
 export function Room() {
   const { roomId } = useParams();
+
+  function handleShareRoom() {
+    const url = window.location.href.toString();
+
+    if (navigator.share !== undefined && navigator.canShare()) {
+      navigator.share({ url });
+    } else {
+      navigator.clipboard.writeText(url);
+    }
+
+    toast.info("The room URL has been copied to your clipboard.");
+  }
 
   return (
     <div className="mx-auto max-w-[640px] flex flex-col gap-6 py-10 px-4">
@@ -16,8 +30,9 @@ export function Room() {
         </span>
 
         <button
+          onClick={handleShareRoom}
           type="submit"
-          className="bg-zinc-800 text-zinc-300 px-3 py-1.5 gap-1.5 flex items-center transition-colors rounded-lg font-medium text-sm hover:bg-zinc-700"
+          className="ml-auto bg-zinc-800 text-zinc-300 px-3 py-1.5 gap-1.5 flex items-center transition-colors rounded-lg font-medium text-sm hover:bg-zinc-700"
         >
           Compartilhar
           <Share2 className="size-4" />
@@ -44,26 +59,8 @@ export function Room() {
       </form>
 
       <ol className="list-decimal list-outside px-4 space-y-8">
-        <li className="ml-4 text-zinc-100 leading-relaxed">
-          O que é Lorem Ipsum?
-          <button
-            type="button"
-            className="flex items-center mt-3 gap-2 text-orange-400 text-small font-medium hover:text-orange-500"
-          >
-            <ArrowUp className="size-4" />
-            Curtir pergunta (15)
-          </button>
-        </li>
-        <li className="ml-4 text-zinc-100 leading-relaxed">
-          O que é Lorem Ipsum?
-          <button
-            type="button"
-            className="flex items-center mt-3 gap-2 text-zinc-400 text-small font-medium hover:text-zinc-300"
-          >
-            <ArrowUp className="size-4" />
-            Curtir pergunta (15)
-          </button>
-        </li>
+        <Message text="aosjaokda" amountOfReactions={10} />
+        <Message text="wwwww" amountOfReactions={30} />
       </ol>
     </div>
   );
