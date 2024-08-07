@@ -1,51 +1,49 @@
-# React + TypeScript + Vite
+## Stack used
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img src="https://skillicons.dev/icons?i=react,github,tailwindcss,vite&theme=dark" />
 
-Currently, two official plugins are available:
+<br>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Authors
+- [@fandredev](https://www.linkedin.com/in/devfandre/)
+- [Rocketseat](https://www.rocketseat.com.br/)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Setup local environment
+## 1. Clone this repo
+```
+$ git clone git@github.com:fandredev/react-ama.git
+```
+And cd into the root folder:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 2. Enter in folder
+```
+cd djlint
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+## 3. Install packages:
 ```
-# react-ama
+npm i --force
+```
+
+Note: this project use React v19 RC and flag --force is required for that.
+
+## 4. Start server:
+```
+npm run dev
+```
+
+## 5. Use golang API:
+
+See more here: https://github.com/fandredev/go-react-server
+
+## Feedback
+
+If you have any feedback, please let us know via profissionalf.andre@gmail.com
+
+## Referencies
+
+ - [Rocketseat](https://www.rocketseat.com.br/)
+ - [React 19 RC](https://19.react.dev/)
+ - [Vite](https://vitejs.dev)
+ - [TailwindCSS](https://tailwindcss.com/)
