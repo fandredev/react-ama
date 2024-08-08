@@ -26,7 +26,7 @@ export function Messages() {
   useMessagesWebSockets({ roomId });
 
   const sortedMessages = data.messages.sort((a, b) => {
-    return a.amountOfReactions - b.amountOfReactions;
+    return b.amountOfReactions - a.amountOfReactions;
   });
 
   return (
