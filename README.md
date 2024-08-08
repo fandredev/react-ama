@@ -18,7 +18,7 @@ And cd into the root folder:
 
 ## 2. Enter in folder
 ```
-cd djlint
+cd react-ama
 ```
 
 ## 3. Install packages:
