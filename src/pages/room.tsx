@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import amaLogo from "../assets/ama-logo.svg";
 import { ArrowRight, Share2 } from "lucide-react";
 import { toast } from "sonner";
-import { Message } from "../components/message";
+import { Messages } from "../components/messages";
+import { Suspense } from "react";
 
 export function Room() {
   const { roomId } = useParams();
@@ -58,10 +59,9 @@ export function Room() {
         </button>
       </form>
 
-      <ol className="list-decimal list-outside px-4 space-y-8">
-        <Message text="aosjaokda" amountOfReactions={10} answered />
-        <Message text="wwwww" amountOfReactions={30} />
-      </ol>
+      <Suspense fallback={<p>Loading...</p>}>
+        <Messages />
+      </Suspense>
     </div>
   );
 }
